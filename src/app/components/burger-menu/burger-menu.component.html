@@ -1,1 +1,23 @@
-<p>burger-menu works!</p>
+<div class="avatar-menu">
+    <div class="menu-container" (click)="handleMenuClick()">
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="user-image">
+        <img
+          src="https://via.placeholder.com/40"
+          alt="User"
+        />
+      </div>
+    </div>
+
+    <div class="dropdown" *ngIf="isOpen">
+        <div class="dropdown-item" (click)="toggleLogoutModal()">
+        Log out
+        <app-pop-are-you-sure *ngIf="logoutModal" (toggleModal)="toggleLogoutModal()"></app-pop-are-you-sure>
+        </div>
+    </div>
+
+</div>
