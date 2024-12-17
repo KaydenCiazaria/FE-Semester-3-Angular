@@ -1,1 +1,26 @@
-<p>property-information works!</p>
+<div class="property-information-container">
+    <!-- Add New Property button positioned at the top right -->
+    <button class="info-button add-button" (click)="handleAddProperty()">
+      Add New Property
+    </button>
+  
+    <!-- Property Information -->
+    <div class="property-info-container">
+      <h2>Property Details</h2>
+      <p><strong>Title:</strong> {{ property?.title || 'N/A' }}</p>
+      <p><strong>Price:</strong> {{ property?.price || 'N/A' }}</p>
+      <p><strong>Address:</strong> {{ property?.address || 'N/A' }}</p>
+      <p><strong>Tags:</strong> {{ property?.tags || 'No tags available' }}</p>
+    </div>
+  
+    <!-- Action Buttons Container -->
+    <div class="buttons-container">
+      <button class="info-button edit-button" (click)="handleEditProperty()">
+        Edit
+      </button>
+      <button class="info-button schedule-button" (click)="handleViewSchedule()">
+        Schedule
+      </button>
+    </div>
+  </div>
+  

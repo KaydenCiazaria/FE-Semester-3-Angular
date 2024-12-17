@@ -1,25 +1,36 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { PopLoginComponent } from '../popups/pop-login/pop-login.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-auth-buttons',
-  templateUrl: './auth-buttons.component.html',
-  styleUrls: ['./auth-buttons.component.css']
+  standalone: true,
+  imports: [PopLoginComponent,CommonModule],
+  template: `
+    <div>
+      <button (click)="handleLoginClick()">Login</button>
+      <button (click)="navigateToRegister()">Register</button>
+      
+      <!-- Render PopLogin modal conditionally -->
+      <app-pop-login 
+        *ngIf="isLoginOpen" 
+        (closeModal)="closeModal()">
+      </app-pop-login>
+    </div>
+  `
 })
 export class AuthButtonsComponent {
-  isLoginOpen: boolean = false; // State to track login modal visibility
+  isLoginOpen = false;
 
-  constructor(private router: Router) {}
-
-  openLoginModal(): void {
-    this.isLoginOpen = true; // Open modal
+  handleLoginClick() {
+    this.isLoginOpen = true; // Open the modal
   }
 
-  closeModal(): void {
-    this.isLoginOpen = false; // Close modal
+  closeModal() {
+    this.isLoginOpen = false; // Close the modal
   }
 
-  navigateToRegister(): void {
-    this.router.navigate(['/headerPlain/register']); // Navigate to Register
+  navigateToRegister() {
+    window.location.href = 'headerPlain/register'; // Direct navigation
   }
 }

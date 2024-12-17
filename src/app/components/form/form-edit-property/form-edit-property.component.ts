@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form-edit-property',
   standalone: true,
   templateUrl: './form-edit-property.component.html',
-  styleUrls: ['./form-edit-property.component.css']
+  styleUrls: ['./form-edit-property.component.css'],
+  imports: [CommonModule]
 })
 export class FormEditPropertyComponent implements OnInit {
   formData = {
