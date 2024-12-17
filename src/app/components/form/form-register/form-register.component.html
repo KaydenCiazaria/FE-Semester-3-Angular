@@ -1,1 +1,81 @@
-<p>form-register works!</p>
+<form (submit)="handleSubmit($event)" class="form-register">
+    <h2>Register</h2>
+  
+    <!-- Role Selection -->
+    <div class="role-container">
+      <div
+        class="role-box"
+        [class.selected-role]="formData.role === 'renter'"
+        (click)="handleRoleChange('renter')"
+      >
+        Renter
+      </div>
+      <div
+        class="role-box"
+        [class.selected-role]="formData.role === 'owner'"
+        (click)="handleRoleChange('owner')"
+      >
+        Owner
+      </div>
+    </div>
+  
+    <!-- Form Fields -->
+    <div>
+      <label>
+        First Name:
+        <input
+          type="text"
+          name="firstName"
+          [(ngModel)]="formData.firstName"
+          required
+        />
+      </label>
+      <label>
+        Last Name:
+        <input
+          type="text"
+          name="lastName"
+          [(ngModel)]="formData.lastName"
+          required
+        />
+      </label>
+    </div>
+  
+    <div>
+      <label>
+        Phone Number:
+        <input
+          type="tel"
+          name="phone"
+          [(ngModel)]="formData.phone"
+          required
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="formData.email"
+          required
+        />
+      </label>
+    </div>
+  
+    <div>
+      <label>
+        Password:
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="formData.password"
+          required
+        />
+      </label>
+    </div>
+  
+    <button type="submit" class="submit-button">
+      Register
+    </button>
+  </form>
+  
