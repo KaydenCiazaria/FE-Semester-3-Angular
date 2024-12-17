@@ -1,1 +1,13 @@
-<p>pop-are-you-sure works!</p>
+<div class="pop-logout-overlay">
+    <div class="pop-logout-container">
+      <h2>Are you sure?</h2>
+      <div class="logout-button-group">
+        <button class="logout-button yes-button" (click)="handleLogout()">
+          Yes
+        </button>
+        <button class="logout-button no-button" (click)="decline(); $event.stopPropagation()">
+          No
+        </button>
+      </div>
+    </div>
+  </div>
