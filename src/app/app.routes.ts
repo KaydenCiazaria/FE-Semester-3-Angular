@@ -4,6 +4,7 @@ import { FormRegisterComponent } from './components/form/form-register/form-regi
 import {FormAddPropertyComponent} from './components/form/form-add-property/form-add-property.component';
 import { FormReservationComponent } from './components/form/form-reservation/form-reservation.component';
 import { FormEditPropertyComponent } from './components/form/form-edit-property/form-edit-property.component';
+import { NotificationCardComponent } from './components/notification-card/notification-card.component';
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'form-add-property', component: FormAddPropertyComponent },
   { path: 'reservation', component: FormReservationComponent },  // this is the final: { path: 'reservation/:id', component: FormReservationComponent },
   { path: 'edit-villa', component: FormEditPropertyComponent }, // add /:id
+  { path: 'notification-card', component: NotificationCardComponent }, 
 ];
