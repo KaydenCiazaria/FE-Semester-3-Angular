@@ -1,41 +1,11 @@
 <div class="header">
-    <!-- Logo Section -->
-    <div class="logo" (click)="handleLogoClick()" style="cursor: pointer">
-      <img src="assets/images/logo.png" alt="VillaBooking Logo" />
-      <span>VillaBooking.com</span>
-    </div>
-  
-    <!-- Default Header -->
-    <ng-container *ngIf="type === 'default'">
-      <app-search-bar></app-search-bar>
-      <div 
-        class="list-your-properties" 
-        (click)="navigateTo('/headerPlain/register')"
-        style="cursor: pointer"
-      >
-        List your Properties?
-      </div>
-      <app-auth-buttons></app-auth-buttons>
-    </ng-container>
-  
-    <!-- LoggedIn Header -->
-    <ng-container *ngIf="type === 'loggedIn'">
-      <div *ngIf="userName; else searchBarTemplate" class="user-name">
-        <h1>{{ userName }}</h1>
-      </div>
-      <ng-template #searchBarTemplate>
-        <app-search-bar></app-search-bar>
-      </ng-template>
-  
-      <div class="notification" (click)="handleNotification()" style="cursor: pointer">
-        🔔
-      </div>
-      <app-auth-buttons></app-auth-buttons>
-    </ng-container>
-  
-    <!-- Plain Header -->
-    <ng-container *ngIf="type === 'plain'">
-      <!-- No additional features, only the logo -->
-    </ng-container>
+  <div class="logo" (click)="navigateHome()" style="cursor: pointer;">
+    <img src="assets/images/logo.png" alt="VillaBooking Logo" />
+    <span>VillaBooking.com</span>
   </div>
-  
+  <app-search-bar></app-search-bar>  <!-- Use the SearchBar component -->
+  <div class="list-your-properties" (click)="navigateToRegister()" style="cursor: pointer;">
+    List your Properties?
+  </div>
+  <app-auth-buttons></app-auth-buttons>  <!-- Use the AuthButtons component -->
+</div>

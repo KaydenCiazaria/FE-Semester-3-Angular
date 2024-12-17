@@ -1,31 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchBarComponent } from '../search-bar/search-bar.component';  // Import the SearchBar component
+import { AuthButtonsComponent } from '../auth-buttons/auth-buttons.component';  // Import the AuthButtons component
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [SearchBarComponent, AuthButtonsComponent],  // Include the imported components
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Input() type: 'default' | 'loggedIn' | 'plain' = 'default'; // Type of header
-  @Input() userName: string | null = null; // Display name for logged-in header
 
   constructor(private router: Router) {}
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
-  }
-
-  handleNotification(): void {
-    const currentPath = this.router.url;
-    if (currentPath.startsWith('/headerLoggedIn/property')) {
-      this.navigateTo('/headerLoggedIn/notificationOwner');
-    } else {
-      this.navigateTo('/headerLoggedIn/notificationRenter');
-    }
-  }
-
-  handleLogoClick(): void {
+  navigateHome() {
     this.router.navigate(['/']);
+  }
+
+  navigateToRegister() {
+    this.router.navigate(['/headerPlain/register']);
   }
 }
