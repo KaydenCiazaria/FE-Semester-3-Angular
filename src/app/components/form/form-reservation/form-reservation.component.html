@@ -1,1 +1,15 @@
-<p>form-reservation works!</p>
+<form (submit)="handleSubmit($event)" class="reservation">
+    <div>
+      <label>
+        Message:
+        <textarea
+          name="message"
+          [value]="formData.message"
+          (input)="handleChange($event)"
+          placeholder="Enter your message"
+        ></textarea>
+      </label>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  

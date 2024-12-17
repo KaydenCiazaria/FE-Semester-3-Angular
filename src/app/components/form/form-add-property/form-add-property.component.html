@@ -1,1 +1,111 @@
-<p>form-add-property works!</p>
+<div class="form-container">
+    <h1>Add Villa</h1>
+    <form (submit)="handleSubmit($event)" class="reservation">
+      <!-- Villa Name -->
+      <label>
+        Villa Name:
+        <input
+          type="text"
+          name="villaName"
+          [value]="formData.villaName"
+          (input)="handleChange($event)"
+          placeholder="Enter the villa name"
+          required
+        />
+      </label>
+  
+      <!-- Villa Description -->
+      <label>
+        Villa Description:
+        <textarea
+          name="villaDesc"
+          [value]="formData.villaDesc"
+          (input)="handleChange($event)"
+          placeholder="Enter the villa description"
+          style="height: 100px; vertical-align: top;"
+          required
+        ></textarea>
+      </label>
+  
+      <!-- Address -->
+      <label>
+        Address:
+        <input
+          type="text"
+          name="address"
+          [value]="formData.address"
+          (input)="handleChange($event)"
+          placeholder="Enter the villa address"
+          required
+        />
+      </label>
+  
+      <!-- Price -->
+      <label>
+        Price (per night):
+        <input
+          type="text"
+          name="price"
+          [value]="formData.price"
+          (input)="handlePrice($event)"
+          placeholder="Enter the price per night"
+          required
+        />
+      </label>
+  
+      <!-- Occupancy -->
+      <label>
+        Occupancy:
+        <input
+          type="number"
+          name="occupancy"
+          [value]="formData.occupancy"
+          (input)="handleChange($event)"
+          placeholder="Enter maximum occupancy"
+          required
+        />
+      </label>
+  
+      <!-- Location -->
+      <label>
+        Location: <br />
+        <select
+          name="locationName"
+          [value]="formData.locationName"
+          (change)="handleLocChange($event)"
+          required
+        >
+          <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+        </select>
+      </label>
+  
+      <!-- Tags -->
+      <label>
+        Tags (comma-separated):
+        <input
+          type="text"
+          name="tags"
+          [value]="formData.tags"
+          (input)="handleChange($event)"
+          placeholder="e.g., beach, luxury, family"
+        />
+      </label>
+  
+      <!-- Photo -->
+      <label>
+        Photo:
+        <input
+          type="text"
+          name="photo"
+          [value]="formData.photo"
+          (input)="handleChange($event)"
+          placeholder="Enter a number from 1-10"
+          required
+        />
+      </label>
+  
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

@@ -1,1 +1,125 @@
-<p>form-edit-property works!</p>
+<div>
+    <h1>Edit Villa</h1>
+    <form (submit)="handleSubmit($event)" class="reservation">
+      <div>
+        <label>
+          Villa Name:
+          <input
+            type="text"
+            name="villa_name"
+            [value]="formData.villa_name"
+            (input)="handleChange($event)"
+            placeholder="Enter the villa name"
+            required
+          />
+        </label>
+  
+        <label>
+          Villa Description:
+          <textarea
+            name="villa_desc"
+            [value]="formData.villa_desc"
+            (input)="handleChange($event)"
+            placeholder="Enter the villa description"
+            required
+          ></textarea>
+        </label>
+  
+        <label>
+          Address:
+          <input
+            type="text"
+            name="address"
+            [value]="formData.address"
+            (input)="handleChange($event)"
+            placeholder="Enter the villa address"
+            required
+          />
+        </label>
+  
+        <label>
+          Price (per night):
+          <input
+            type="number"
+            name="price"
+            [value]="formData.price"
+            (input)="handlePrice($event)"
+            placeholder="Enter the price per night"
+            required
+          />
+        </label>
+  
+        <label>
+          Occupancy:
+          <input
+            type="number"
+            name="occupancy"
+            [value]="formData.occupancy"
+            (input)="handleChange($event)"
+            placeholder="Enter maximum occupancy"
+            required
+          />
+        </label>
+  
+        <label>
+          Location:
+          <select
+            name="location"
+            [value]="formData.locationName"
+            (change)="handleLocChange($event)"
+            required
+          >
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bogor">Bogor</option>
+            <option value="Depok">Depok</option>
+            <option value="Tangerang">Tangerang</option>
+            <option value="Bekasi">Bekasi</option>
+          </select>
+        </label>
+      </div>
+  
+      <div>
+        <label>
+          Tags (comma-separated):
+          <input
+            type="text"
+            name="tags"
+            [value]="formData.tags"
+            (input)="handleChange($event)"
+            placeholder="e.g., beach, luxury, family"
+          />
+        </label>
+      </div>
+  
+      <div>
+        <label>
+          Photo:
+          <input
+            type="text"
+            name="imagePath"
+            [value]="formData.imagePath"
+            (input)="handleChange($event)"
+            placeholder="Enter a number from 1-10"
+            required
+          />
+        </label>
+      </div>
+  
+      <div class="form-buttons">
+        <button type="submit" class="submit-button">Submit</button>
+        <button type="button" class="delete-button" (click)="openModal()">
+          Delete
+        </button>
+      </div>
+    </form>
+  
+    <!-- Modal for Delete Confirmation -->
+    <div *ngIf="showModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to delete this villa?</p>
+        <button (click)="handleDeleteConfirm()">Yes, Delete</button>
+        <button (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
