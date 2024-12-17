@@ -1,1 +1,11 @@
-<p>auth-buttons works!</p>
+<div class="auth-buttons">
+    <!-- Login Button -->
+    <button class="login-button" (click)="openLoginModal()">Login</button>
+  
+    <!-- Register Button -->
+    <button class="register-button" (click)="navigateToRegister()">Register</button>
+  
+    <!-- Render PopLogin when isLoginOpen is true -->
+    <app-pop-login *ngIf="isLoginOpen" (closeModal)="closeModal()"></app-pop-login>
+  </div>
+  

@@ -1,1 +1,50 @@
-<p>pop-login works!</p>
+<div class="pop-login-overlay">
+    <div class="pop-login-container">
+      <!-- Remove the (click) event -->
+      <button class="close-button">X</button>
+  
+      <!-- Heading -->
+      <h2>Log In to unlock more features!</h2>
+      <p>Who Are You?</p>
+  
+      <!-- User Type Selection -->
+      <div class="user-type-selection">
+        <button
+          class="user-type-button"
+          [class.active]="userType === 'renter'"
+          (click)="handleUserTypeChange('renter')"
+        >
+          Look for a villa
+        </button>
+        <button
+          class="user-type-button"
+          [class.active]="userType === 'owner'"
+          (click)="handleUserTypeChange('owner')"
+        >
+          Rent out my villa
+        </button>
+      </div>
+  
+      <!-- Login Form -->
+      <form (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" [(ngModel)]="email" name="email" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" [(ngModel)]="password" name="password" required />
+        </div>
+  
+        <button type="submit" class="login-submit-button">Enter</button>
+      </form>
+  
+      <!-- Register Text with RouterLink -->
+      <p class="register-text">
+        Don't have an account?
+        <a class="register-link" routerLink="/test-page">Register Here</a>
+      </p>
+    </div>
+  </div>
+  
