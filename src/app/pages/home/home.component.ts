@@ -6,12 +6,11 @@ import { HeaderComponent } from '../../components/header/header.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, VillaCardComponent, HeaderComponent],
+  imports: [CommonModule, VillaCardComponent, HeaderComponent],  // Directly import HeaderComponent here
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
   villas = [
     {
       id: '1051258106',
@@ -22,6 +21,5 @@ export class HomeComponent {
       address: '123 Awesome Lane, Awesome Town',
       tags: 'A refreshing stay at an exciting villa!'
     }
-  ]
-
+  ];
 }
