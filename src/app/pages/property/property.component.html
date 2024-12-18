@@ -1,1 +1,42 @@
-<p>property works!</p>
+<div>
+    <h1>Your Villas</h1>
+  
+    <!-- Error message -->
+    <p class="error-message" *ngIf="error">{{ error }}</p>
+  
+    <!-- No properties -->
+    <p *ngIf="properties.length === 0">Please add your property.</p>
+  
+    <!-- Properties display -->
+    <div class="properties-container" *ngIf="properties.length > 0">
+      <!-- Previous button -->
+      <button (click)="handlePrev()" class="navigation-button left">▶</button>
+  
+      <!-- Main villa image -->
+      <div class="main-villa-container">
+        <img
+          *ngIf="selectedProperty"
+          [src]="selectedProperty.imgpath"
+          [alt]="selectedProperty.title"
+          class="main-villa-image"
+        />
+      </div>
+  
+      <!-- Next button -->
+      <button (click)="handleNext()" class="navigation-button right">◀</button>
+    </div>
+  
+    <!-- Property information -->
+    <div class="property-information-container" *ngIf="selectedProperty">
+      <h2>{{ selectedProperty.title }}</h2>
+      <p>{{ selectedProperty.tags }}</p>
+      <p><strong>Address:</strong> {{ selectedProperty.address }}</p>
+      <p><strong>Price:</strong> {{ selectedProperty.price }}</p>
+      <p><strong>Occupancy:</strong> {{ selectedProperty.occupancy }} people</p>
+      <p><strong>Available Date:</strong> {{ selectedProperty.availableDate }}</p>
+      <p><strong>Rating:</strong> {{ selectedProperty.villarating }}</p>
+      <p><strong>Comment:</strong> {{ selectedProperty.villacomment }}</p>
+      <p><strong>Location:</strong> {{ selectedProperty.location }}</p>
+    </div>
+  </div>
+  
