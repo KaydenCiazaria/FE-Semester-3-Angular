@@ -1,1 +1,10 @@
-<p>villa-card works!</p>
+<div class="villa-card">
+    <img [src]="villa.image" [alt]="villa.title" class="villa-image" />
+    <div class="villa-details">
+      <h2>{{ villa.title }}</h2>
+      <p><strong>Price:</strong> {{ villa.price }}</p>
+      <p><strong>Rating:</strong> {{ villa.rating }} / 5</p>
+      <p><strong>Address:</strong> {{ villa.address }}</p>
+      <p class="villa-tags">{{ villa.tags }}</p>
+    </div>
+  </div>
