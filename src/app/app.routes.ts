@@ -3,6 +3,7 @@ import { PopLoginComponent } from './components/popups/pop-login/pop-login.compo
 import { AuthButtonsComponent } from './components/auth-buttons/auth-buttons.component';
 import { PropertyInformationComponent } from './components/property-information/property-information.component';
 import { FormRegisterComponent } from './components/form/form-register/form-register.component';
+import { FooterComponent } from './components/footer/footer.component';
 import {FormAddPropertyComponent} from './components/form/form-add-property/form-add-property.component';
 import { FormReservationComponent } from './components/form/form-reservation/form-reservation.component';
 import { FormEditPropertyComponent } from './components/form/form-edit-property/form-edit-property.component';
@@ -20,6 +21,8 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'loggedin', component: LoggedInHomeComponent},
   { path: 'form-register', component: FormRegisterComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'header', component: HeaderComponent },
   { path: 'form-add-property', component: FormAddPropertyComponent },
   { path: 'form-reservation', component: FormReservationComponent },  // this is the final: { path: 'reservation/:id', component: FormReservationComponent },
   { path: 'edit-villa', component: FormEditPropertyComponent }, // add /:i

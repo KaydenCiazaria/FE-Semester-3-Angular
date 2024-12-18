@@ -17,12 +17,15 @@
   margin-right: 10px;
 }
 
-.list-your-properties {
-  font-weight: bold;
+.auth-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: flex-start; /* Align buttons to the left */
+  gap: 10px; /* Add spacing between the buttons */
 }
 
-.auth-buttons-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Adds space between buttons */
+.auth-buttons button {
+  width: 90px; /* Set a consistent width for both buttons */
+  padding: 8px; /* Adjust padding for consistent button size */
+  font-size: 14px; /* Adjust font size for readability */
 }
