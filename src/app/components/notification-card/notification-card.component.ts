@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-notification-card',
+  standalone: true, // Mark as standalone
+  imports: [CommonModule], // Import necessary modules
   templateUrl: './notification-card.component.html',
   styleUrls: ['./notification-card.component.css'],
 })
