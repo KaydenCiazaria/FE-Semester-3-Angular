@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PopLoginComponent } from './components/popups/pop-login/pop-login.component';
 import { AuthButtonsComponent } from './components/auth-buttons/auth-buttons.component';
 import { PropertyInformationComponent } from './components/property-information/property-information.component';
@@ -14,9 +14,10 @@ import { PropertyComponent } from './pages/property/property.component';
 import { NotificationCardComponent } from './components/notification-card/notification-card.component';
 import { NotificationRenterComponent } from './pages/notification/notification-renter/notification-renter.component';
 import { VillaInformationComponent } from './pages/villa-information/villa-information.component';
+import { NgModule } from '@angular/core';
+import { Router } from 'express';
 import { HeaderComponent } from './components/header/header.component';
 import { PopVerificationComponent } from './components/popups/pop-verification/pop-verification.component';
-
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
   { path: '', component: HomeComponent },
@@ -33,7 +34,13 @@ export const routes: Routes = [
   { path: 'burger-menu', component: BurgerMenuComponent },
   { path: 'notification-card', component: NotificationCardComponent }, 
   { path: 'notification', component: NotificationRenterComponent }, 
-  { path: 'villa-info', component: VillaInformationComponent },
+  { path: 'villa-info/:id', component: VillaInformationComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'pop-verification', component: PopVerificationComponent },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}

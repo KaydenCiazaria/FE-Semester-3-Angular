@@ -14,6 +14,6 @@ export class VillaCardComponent {
   constructor(private router: Router ){};
 
   openInfo() {
-    this.router.navigate(['villa-info'])
+    this.router.navigate(['villa-info',this.villa.id]);
   }
 }

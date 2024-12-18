@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { VillaService } from '../../components/services/villa-service';
 import { FormReservationComponent } from '../../components/form/form-reservation/form-reservation.component'; // Import FormReservation
 
 @Component({
@@ -10,12 +11,19 @@ import { FormReservationComponent } from '../../components/form/form-reservation
   templateUrl: './villa-information.component.html',
   styleUrls: ['./villa-information.component.css'] // Correct plural 'styleUrls'
 })
-export class VillaInformationComponent {
+export class VillaInformationComponent implements OnInit {
   villa: any;
 
-  constructor(private route: ActivatedRoute) {
-    // Access state passed through the route
-    const navigationState = this.route.snapshot.paramMap.get('state');
-    this.villa = navigationState ? JSON.parse(navigationState) : {};
+  constructor(
+    private route: ActivatedRoute,
+    private villaService: VillaService
+  ){}
+
+
+  ngOnInit(): void {
+      const villaId = this.route.snapshot.paramMap.get('id');
+      if (villaId) {
+        this.villa = this.villaService.getVillaById(villaId)
+      }
   }
 }
