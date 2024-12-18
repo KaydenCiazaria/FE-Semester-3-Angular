@@ -31,6 +31,6 @@ export class AuthButtonsComponent {
   }
 
   navigateToRegister() {
-    window.location.href = 'headerPlain/register'; // Direct navigation
+    window.location.href = 'form-register'; // Direct navigation
   }
 }
