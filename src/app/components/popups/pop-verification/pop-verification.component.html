@@ -1,1 +1,43 @@
-<p>pop-verification works!</p>
+<div class="pop-verification-overlay">
+    <div class="pop-verification-container">
+      <button class="close-button" (click)="closeModal()">X</button>
+      <h2>Verify Renter and Rate Your Stay</h2>
+  
+      <form (submit)="handleSubmit($event)">
+        <!-- Verification Input -->
+        <div class="form-group">
+          <label for="verification-code">Verification Code:</label>
+          <input
+            id="verification-code"
+            type="text"
+            [(ngModel)]="verifyCode"
+            name="verificationCode"
+            required
+          />
+        </div>
+  
+        <!-- Rating Slider -->
+        <div class="form-group">
+          <label for="rating-slider">Rate Your Stay:</label>
+          <div class="slider-container">
+            <input
+              id="rating-slider"
+              type="range"
+              min="0"
+              max="5"
+              step="1"
+              [(ngModel)]="rating"
+              name="rating"
+              (change)="handleSliderChange($event)"
+              class="slider"
+            />
+            <span class="rating-display">{{ rating }}</span>
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="verify-submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+  

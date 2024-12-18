@@ -15,6 +15,7 @@ import { NotificationCardComponent } from './components/notification-card/notifi
 import { NotificationRenterComponent } from './pages/notification/notification-renter/notification-renter.component';
 import { VillaInformationComponent } from './pages/villa-information/villa-information.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PopVerificationComponent } from './components/popups/pop-verification/pop-verification.component';
 
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
@@ -34,4 +35,5 @@ export const routes: Routes = [
   { path: 'notification', component: NotificationRenterComponent }, 
   { path: 'villa-info', component: VillaInformationComponent },
   { path: 'header', component: HeaderComponent },
+  { path: 'pop-verification', component: PopVerificationComponent },
 ];
