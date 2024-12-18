@@ -1,27 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VillaCardComponent } from '../../components/villa-card/villa-card.component';
-import { HeaderComponent } from '../../components/header/header.component';
+import { VillaService } from '../../components/services/villa-service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, VillaCardComponent, HeaderComponent],
+  imports: [CommonModule, VillaCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  villas = [
-    {
-      id: '1051258106',
-      imagePath: '1',
-      title: 'Excitement Villa',
-      price: '$57,000.00',
-      rating: 5,
-      address: '123 Awesome Lane, Awesome Town',
-      tags: 'A refreshing stay at an exciting villa!'
-    }
-  ]
+  villas: any;
+
+  constructor(private villaService: VillaService) {};
+
+  ngOnInit(): void {
+      this.villas = this.villaService.getVillas();
+}
 
 }
