@@ -6,6 +6,7 @@ import { FormRegisterComponent } from './components/form/form-register/form-regi
 import {FormAddPropertyComponent} from './components/form/form-add-property/form-add-property.component';
 import { FormReservationComponent } from './components/form/form-reservation/form-reservation.component';
 import { FormEditPropertyComponent } from './components/form/form-edit-property/form-edit-property.component';
+import { PropertyComponent } from './pages/property/property.component';
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,4 +16,5 @@ export const routes: Routes = [
   { path: 'edit-villa', component: FormEditPropertyComponent }, // add /:id
   { path: 'auth-button', component: AuthButtonsComponent },
   { path: 'property-info', component: PropertyInformationComponent },
+  { path: 'property', component: PropertyComponent },
 ];
