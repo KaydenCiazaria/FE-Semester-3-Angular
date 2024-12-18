@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VillaCardComponent } from '../../components/villa-card/villa-card.component';
 import { VillaService } from '../../components/services/villa-service';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-home',
