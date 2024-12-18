@@ -1,1 +1,39 @@
-<p>villa-information works!</p>
+<div class="villa-container">
+    <div class="villa-info">
+      <!-- Villa Image -->
+      <div class="villa-image-container">
+        <img [src]="villa?.image" [alt]="villa?.name" class="villa-image" />
+      </div>
+  
+      <!-- Villa Details -->
+      <div class="villa-details">
+        <h1>{{ villa?.title }}</h1>
+        <p class="rating">Rating: {{ villa?.rating }}⭐</p>
+        <div class="info-item">
+          <span class="label">Address:</span>
+          <span class="value">{{ villa?.address }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Short Description:</span>
+          <span class="value">{{ villa?.shortDescription }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Tags:</span>
+          <span class="value">{{ villa?.tags }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Price:</span>
+          <span class="value">{{ villa?.price }}</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Reservation Heading -->
+    <div class="reserve-heading">
+      <h2>Reserve Now!</h2>
+    </div>
+  
+    <!-- FormReservation Component -->
+    <app-form-reservation></app-form-reservation>
+  </div>
+  
