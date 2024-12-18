@@ -6,9 +6,9 @@ import { VillaService } from '../../components/services/villa-service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, VillaCardComponent],
+  imports: [CommonModule, VillaCardComponent, HeaderComponent],  // Directly import HeaderComponent here
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
@@ -19,5 +19,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
       this.villas = this.villaService.getVillas();
 }
-
 }
