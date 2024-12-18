@@ -16,7 +16,7 @@ export const routes: Routes = [
   { path: 'loggedin', component: LoggedInHomeComponent},
   { path: 'form-register', component: FormRegisterComponent },
   { path: 'form-add-property', component: FormAddPropertyComponent },
-  { path: 'reservation', component: FormReservationComponent },  // this is the final: { path: 'reservation/:id', component: FormReservationComponent },
+  { path: 'form-reservation', component: FormReservationComponent },  // this is the final: { path: 'reservation/:id', component: FormReservationComponent },
   { path: 'edit-villa', component: FormEditPropertyComponent }, // add /:i
   { path: 'auth-button', component: AuthButtonsComponent },
   { path: 'property-info', component: PropertyInformationComponent },
