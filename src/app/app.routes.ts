@@ -13,7 +13,6 @@ import { PropertyComponent } from './pages/property/property.component';
 import { NotificationCardComponent } from './components/notification-card/notification-card.component';
 import { NotificationRenterComponent } from './pages/notification/notification-renter/notification-renter.component';
 import { VillaInformationComponent } from './pages/villa-information/villa-information.component';
-import { VillaInformationComponent } from './pages/villa-information/villa-information.component';
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
   { path: '', component: HomeComponent },
