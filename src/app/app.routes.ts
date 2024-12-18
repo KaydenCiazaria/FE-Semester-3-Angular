@@ -10,6 +10,7 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
 import { HomeComponent } from './pages/home/home.component';
 import { LoggedInHomeComponent } from './pages/logged-in-home/logged-in-home.component';
 import { PropertyComponent } from './pages/property/property.component';
+import { NotificationCardComponent } from './components/notification-card/notification-card.component';
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
   { path: '', component: HomeComponent },
@@ -22,4 +23,5 @@ export const routes: Routes = [
   { path: 'property-info', component: PropertyInformationComponent },
   { path: 'property', component: PropertyComponent },
   { path: 'burger-menu', component: BurgerMenuComponent },
+  { path: 'notification-card', component: NotificationCardComponent }, 
 ];

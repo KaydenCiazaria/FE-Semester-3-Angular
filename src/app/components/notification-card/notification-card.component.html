@@ -1,1 +1,26 @@
-<p>notification-card works!</p>
+<div class="NotificationCard">
+    <div class="rate-paragraph" *ngIf="villa?.type === 'reserved-villas'">
+      <div>
+        <h3>{{ villa?.title }}</h3>
+        <p>Price: {{ villa?.price }}</p>
+        <p>Address: {{ villa?.address }}</p>
+        <p>Reserved Dates: {{ villa?.date }}</p>
+        <p>Message from user: {{ villa?.message }}</p>
+        <p>Verification Code: {{ villa?.verificationCode }}</p>
+      </div>
+      <button (click)="buttonFunction()">More Information!</button>
+    </div>
+  
+    <div class="rate-paragraph" *ngIf="villa?.type === 'villa-approval'">
+      <div>
+        <h3>{{ villa?.title }}</h3>
+        <p>{{ villa?.title }} has been reserved.</p>
+      </div>
+      <div>
+        <button (click)="buttonFunction()">Reservation Code</button>
+      </div>
+    </div>
+    <!-- Modal Rendering for pop-ups, for now this is the placeholder -->
+    <!-- <app-pop-verification *ngIf="isModalOpen" (closeModal)="closeModal()"></app-pop-verification>  -->
+  </div>
+  

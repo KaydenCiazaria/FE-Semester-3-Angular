@@ -1,0 +1,34 @@
+Task-angular-project
+Auth-buttons(bryant) ✅
+burger-menu (Troy)👍
+Calender
+Footer(justin) ✅
+Form-add-property(bryant)✅
+Form-edit-property(bryant)✅
+Form-register(justin)✅
+form-reservation(bryant)✅
+Header (justin)
+Notification-card (Kayden) ✅
+Pop-are-you-sure (Troy)👍
+Pop-delete
+Pop-login(justin)✅
+Pop-verification
+Property-information(bryant) ✅
+Property-list(bryant) ✅
+Renter-information
+Search-bar 👍
+Villa-card (Kayden)👍
+Villa-card-grid (Kayden) 👍
+Villa-description (Kayden) 👍
+pages:
+Error
+Home (Troy)👍
+Logged in home (Troy)👍
+Notification (Kayden) 👍
+Property
+Property-add
+Property-edit
+Property-schedule
+Register (Troy)👍
+Reservation-detail👍
+villa-information (Troy)👍

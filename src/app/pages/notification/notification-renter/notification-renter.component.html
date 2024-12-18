@@ -1,1 +1,16 @@
-<p>notification-renter works!</p>
+<div class="notification-background">
+  <div class="content-box">
+    <!-- Loop through villas array -->
+    <ng-container *ngIf="villas && villas.length > 0; else noVillas">
+      <app-notification-card
+        *ngFor="let currentVilla of villas; let i = index"
+        [villa]="currentVilla">
+      </app-notification-card>
+    </ng-container>
+    
+    <!-- Show this if no villas exist -->
+    <ng-template #noVillas>
+      <div>No villas found</div>
+    </ng-template>
+  </div>
+</div>
