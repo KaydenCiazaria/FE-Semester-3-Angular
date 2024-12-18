@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VillaCardComponent } from '../../components/villa-card/villa-card.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, VillaCardComponent],
+  imports: [CommonModule, VillaCardComponent, HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
