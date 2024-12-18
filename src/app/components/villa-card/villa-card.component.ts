@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-villa-card',
@@ -9,4 +10,10 @@ import { Component, Input } from '@angular/core';
 })
 export class VillaCardComponent {
   @Input() villa: any;
+
+  constructor(private router: Router ){};
+
+  openInfo() {
+    this.router.navigate(['villa-info'])
+  }
 }

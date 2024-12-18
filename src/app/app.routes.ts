@@ -13,6 +13,7 @@ import { PropertyComponent } from './pages/property/property.component';
 import { NotificationCardComponent } from './components/notification-card/notification-card.component';
 import { NotificationRenterComponent } from './pages/notification/notification-renter/notification-renter.component';
 import { VillaInformationComponent } from './pages/villa-information/villa-information.component';
+import { VillaInformationComponent } from './pages/villa-information/villa-information.component';
 export const routes: Routes = [
   { path: 'login', component: PopLoginComponent },
   { path: '', component: HomeComponent },
@@ -27,5 +28,5 @@ export const routes: Routes = [
   { path: 'burger-menu', component: BurgerMenuComponent },
   { path: 'notification-card', component: NotificationCardComponent }, 
   { path: 'notification', component: NotificationRenterComponent }, 
-  { path: 'villa-information', component: VillaInformationComponent},
+  { path: 'villa-info', component: VillaInformationComponent }
 ];
